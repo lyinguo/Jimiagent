@@ -1,7 +1,4 @@
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
+
 from __future__ import annotations
 
 import logging
@@ -29,6 +26,9 @@ VALID_MESSAGE_TYPES = {"text", "shutdown_request", "shutdown_response"}
 
 
 class SendMessageTool(Tool):
+    """
+        进行工具之间的通信，发送消息到指定的agent_id或agent_name，或者广播给所有队友（to='*'）。支持文本消息和结构化消息（如shutdown_request/response）。文本消息需要提供一个简短的summary字段（5-10词）。工具会将消息写入目标agent的邮箱，并尝试唤醒对应的tmux pane以促使其处理新消息。
+    """
     name = "SendMessage"
     description = (
         "Send a message to a teammate by name or agent ID. "

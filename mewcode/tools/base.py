@@ -1,7 +1,4 @@
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -101,5 +98,5 @@ class StreamEnd:
     cache_read: int = 0
     cache_creation: int = 0
 
-
+#他们之间的其中之一
 StreamEvent = TextDelta | ThinkingDelta | ThinkingComplete | ToolCallStart | ToolCallDelta | ToolCallComplete | StreamEnd
